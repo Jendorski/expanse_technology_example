@@ -2,9 +2,14 @@ package com.expanse.test.project.expanseproject;
 
 import android.content.Context;
 
+import androidx.room.Room;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.expanse.test.project.expanseproject.database.RatesDatabase;
+import com.expanse.test.project.expanseproject.database.dao.RatesDao;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -17,6 +22,7 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
+
     @Test
     public void useAppContext() {
         // Context of the app under test.
@@ -24,4 +30,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.expanse.test.project.expanseproject", appContext.getPackageName());
     }
+
 }

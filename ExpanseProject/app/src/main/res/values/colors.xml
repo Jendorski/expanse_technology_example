@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#008577</color>
+
     <color name="colorPrimaryDark">#00574B</color>
+
     <color name="colorAccent">#D81B60</color>
+
+    <color name="disabled_text_color">#fdff</color>
+
+    <color name="default_text_color">#faff</color>
+
+    <color name="focused_text_color">#dda</color>
+
+    <color name="pressed_text_color">#fe3</color>
+
 </resources>

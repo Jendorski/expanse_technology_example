@@ -1,0 +1,1079 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "4d12a70144aceed8700d11ded604b7d5",
+    "entities": [
+      {
+        "tableName": "RatesModel",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`aED` REAL NOT NULL, `aFN` REAL NOT NULL, `aLL` REAL NOT NULL, `aMD` REAL NOT NULL, `aNG` REAL NOT NULL, `aOA` REAL NOT NULL, `aRS` REAL NOT NULL, `aUD` REAL NOT NULL, `aWG` REAL NOT NULL, `aZN` REAL NOT NULL, `bAM` REAL NOT NULL, `bBD` REAL NOT NULL, `bDT` REAL NOT NULL, `bGN` REAL NOT NULL, `bHD` REAL NOT NULL, `bIF` REAL NOT NULL, `bMD` REAL NOT NULL, `bND` REAL NOT NULL, `bOB` REAL NOT NULL, `bRL` REAL NOT NULL, `bSD` REAL NOT NULL, `bTC` REAL NOT NULL, `bTN` REAL NOT NULL, `bWP` REAL NOT NULL, `bYN` REAL NOT NULL, `bYR` REAL NOT NULL, `bZD` REAL NOT NULL, `cAD` REAL NOT NULL, `cDF` REAL NOT NULL, `cHF` REAL NOT NULL, `cLF` REAL NOT NULL, `cLP` REAL NOT NULL, `cNY` REAL NOT NULL, `cOP` REAL NOT NULL, `cRC` REAL NOT NULL, `cUC` REAL NOT NULL, `cUP` REAL NOT NULL, `cVE` REAL NOT NULL, `cZK` REAL NOT NULL, `dJF` REAL NOT NULL, `dKK` REAL NOT NULL, `dOP` REAL NOT NULL, `dZD` REAL NOT NULL, `eGP` REAL NOT NULL, `eRN` REAL NOT NULL, `eTB` REAL NOT NULL, `eUR` INTEGER NOT NULL, `fJD` REAL NOT NULL, `fKP` REAL NOT NULL, `gBP` REAL NOT NULL, `gEL` REAL NOT NULL, `gGP` REAL NOT NULL, `gHS` REAL NOT NULL, `gIP` REAL NOT NULL, `gMD` REAL NOT NULL, `gNF` REAL NOT NULL, `gTQ` REAL NOT NULL, `gYD` REAL NOT NULL, `hKD` REAL NOT NULL, `hNL` REAL NOT NULL, `hRK` REAL NOT NULL, `hTG` REAL NOT NULL, `hUF` REAL NOT NULL, `iDR` REAL NOT NULL, `iLS` REAL NOT NULL, `iMP` REAL NOT NULL, `iNR` REAL NOT NULL, `iQD` REAL NOT NULL, `iRR` REAL NOT NULL, `iSK` REAL NOT NULL, `jEP` REAL NOT NULL, `jMD` REAL NOT NULL, `jOD` REAL NOT NULL, `jPY` REAL NOT NULL, `kES` REAL NOT NULL, `kGS` REAL NOT NULL, `kHR` REAL NOT NULL, `kMF` REAL NOT NULL, `kPW` REAL NOT NULL, `kRW` REAL NOT NULL, `kWD` REAL NOT NULL, `kYD` REAL NOT NULL, `kZT` REAL NOT NULL, `lAK` REAL NOT NULL, `lBP` REAL NOT NULL, `lKR` REAL NOT NULL, `lRD` REAL NOT NULL, `lSL` REAL NOT NULL, `lTL` REAL NOT NULL, `lVL` REAL NOT NULL, `lYD` REAL NOT NULL, `mAD` REAL NOT NULL, `mDL` REAL NOT NULL, `mGA` REAL NOT NULL, `mKD` REAL NOT NULL, `mMK` REAL NOT NULL, `mNT` REAL NOT NULL, `mOP` REAL NOT NULL, `mRO` REAL NOT NULL, `mUR` REAL NOT NULL, `mVR` REAL NOT NULL, `mWK` REAL NOT NULL, `mXN` REAL NOT NULL, `mYR` REAL NOT NULL, `mZN` REAL NOT NULL, `nAD` REAL NOT NULL, `nGN` REAL NOT NULL, `nIO` REAL NOT NULL, `nOK` REAL NOT NULL, `nPR` REAL NOT NULL, `nZD` REAL NOT NULL, `oMR` REAL NOT NULL, `pAB` REAL NOT NULL, `pEN` REAL NOT NULL, `pGK` REAL NOT NULL, `pHP` REAL NOT NULL, `pKR` REAL NOT NULL, `pLN` REAL NOT NULL, `pYG` REAL NOT NULL, `qAR` REAL NOT NULL, `rON` REAL NOT NULL, `rSD` REAL NOT NULL, `rUB` REAL NOT NULL, `rWF` REAL NOT NULL, `sAR` REAL NOT NULL, `sBD` REAL NOT NULL, `sCR` REAL NOT NULL, `sDG` REAL NOT NULL, `sEK` REAL NOT NULL, `sGD` REAL NOT NULL, `sHP` REAL NOT NULL, `sLL` REAL NOT NULL, `sOS` REAL NOT NULL, `sRD` REAL NOT NULL, `sTD` REAL NOT NULL, `sVC` REAL NOT NULL, `sYP` REAL NOT NULL, `sZL` REAL NOT NULL, `tHB` REAL NOT NULL, `tJS` REAL NOT NULL, `tMT` REAL NOT NULL, `tND` REAL NOT NULL, `tOP` REAL NOT NULL, `tRY` REAL NOT NULL, `tTD` REAL NOT NULL, `tWD` REAL NOT NULL, `tZS` REAL NOT NULL, `uAH` REAL NOT NULL, `uGX` REAL NOT NULL, `uSD` REAL NOT NULL, `uYU` REAL NOT NULL, `uZS` REAL NOT NULL, `vEF` REAL NOT NULL, `vND` REAL NOT NULL, `vUV` REAL NOT NULL, `wST` REAL NOT NULL, `xAF` REAL NOT NULL, `xAG` REAL NOT NULL, `xAU` REAL NOT NULL, `xCD` REAL NOT NULL, `xDR` REAL NOT NULL, `xOF` REAL NOT NULL, `xPF` REAL NOT NULL, `yER` REAL NOT NULL, `zAR` REAL NOT NULL, `zMK` REAL NOT NULL, `zMW` REAL NOT NULL, `zWL` REAL NOT NULL, PRIMARY KEY(`uSD`))",
+        "fields": [
+          {
+            "fieldPath": "aED",
+            "columnName": "aED",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aFN",
+            "columnName": "aFN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aLL",
+            "columnName": "aLL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aMD",
+            "columnName": "aMD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aNG",
+            "columnName": "aNG",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aOA",
+            "columnName": "aOA",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aRS",
+            "columnName": "aRS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aUD",
+            "columnName": "aUD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aWG",
+            "columnName": "aWG",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aZN",
+            "columnName": "aZN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bAM",
+            "columnName": "bAM",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bBD",
+            "columnName": "bBD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bDT",
+            "columnName": "bDT",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bGN",
+            "columnName": "bGN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bHD",
+            "columnName": "bHD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bIF",
+            "columnName": "bIF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bMD",
+            "columnName": "bMD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bND",
+            "columnName": "bND",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bOB",
+            "columnName": "bOB",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bRL",
+            "columnName": "bRL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bSD",
+            "columnName": "bSD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bTC",
+            "columnName": "bTC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bTN",
+            "columnName": "bTN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bWP",
+            "columnName": "bWP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bYN",
+            "columnName": "bYN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bYR",
+            "columnName": "bYR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bZD",
+            "columnName": "bZD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cAD",
+            "columnName": "cAD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cDF",
+            "columnName": "cDF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cHF",
+            "columnName": "cHF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cLF",
+            "columnName": "cLF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cLP",
+            "columnName": "cLP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cNY",
+            "columnName": "cNY",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cOP",
+            "columnName": "cOP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cRC",
+            "columnName": "cRC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cUC",
+            "columnName": "cUC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cUP",
+            "columnName": "cUP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cVE",
+            "columnName": "cVE",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cZK",
+            "columnName": "cZK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dJF",
+            "columnName": "dJF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dKK",
+            "columnName": "dKK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dOP",
+            "columnName": "dOP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dZD",
+            "columnName": "dZD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eGP",
+            "columnName": "eGP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eRN",
+            "columnName": "eRN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eTB",
+            "columnName": "eTB",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eUR",
+            "columnName": "eUR",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fJD",
+            "columnName": "fJD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fKP",
+            "columnName": "fKP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gBP",
+            "columnName": "gBP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gEL",
+            "columnName": "gEL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gGP",
+            "columnName": "gGP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gHS",
+            "columnName": "gHS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gIP",
+            "columnName": "gIP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gMD",
+            "columnName": "gMD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gNF",
+            "columnName": "gNF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gTQ",
+            "columnName": "gTQ",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gYD",
+            "columnName": "gYD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hKD",
+            "columnName": "hKD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hNL",
+            "columnName": "hNL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hRK",
+            "columnName": "hRK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hTG",
+            "columnName": "hTG",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hUF",
+            "columnName": "hUF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iDR",
+            "columnName": "iDR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iLS",
+            "columnName": "iLS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iMP",
+            "columnName": "iMP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iNR",
+            "columnName": "iNR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iQD",
+            "columnName": "iQD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iRR",
+            "columnName": "iRR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iSK",
+            "columnName": "iSK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jEP",
+            "columnName": "jEP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jMD",
+            "columnName": "jMD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jOD",
+            "columnName": "jOD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jPY",
+            "columnName": "jPY",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kES",
+            "columnName": "kES",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kGS",
+            "columnName": "kGS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kHR",
+            "columnName": "kHR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kMF",
+            "columnName": "kMF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kPW",
+            "columnName": "kPW",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kRW",
+            "columnName": "kRW",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kWD",
+            "columnName": "kWD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kYD",
+            "columnName": "kYD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kZT",
+            "columnName": "kZT",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lAK",
+            "columnName": "lAK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lBP",
+            "columnName": "lBP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lKR",
+            "columnName": "lKR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lRD",
+            "columnName": "lRD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lSL",
+            "columnName": "lSL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lTL",
+            "columnName": "lTL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lVL",
+            "columnName": "lVL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lYD",
+            "columnName": "lYD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mAD",
+            "columnName": "mAD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mDL",
+            "columnName": "mDL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mGA",
+            "columnName": "mGA",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mKD",
+            "columnName": "mKD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mMK",
+            "columnName": "mMK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mNT",
+            "columnName": "mNT",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mOP",
+            "columnName": "mOP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mRO",
+            "columnName": "mRO",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mUR",
+            "columnName": "mUR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mVR",
+            "columnName": "mVR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mWK",
+            "columnName": "mWK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mXN",
+            "columnName": "mXN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mYR",
+            "columnName": "mYR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mZN",
+            "columnName": "mZN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nAD",
+            "columnName": "nAD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nGN",
+            "columnName": "nGN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nIO",
+            "columnName": "nIO",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nOK",
+            "columnName": "nOK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nPR",
+            "columnName": "nPR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nZD",
+            "columnName": "nZD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oMR",
+            "columnName": "oMR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pAB",
+            "columnName": "pAB",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pEN",
+            "columnName": "pEN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pGK",
+            "columnName": "pGK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pHP",
+            "columnName": "pHP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pKR",
+            "columnName": "pKR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pLN",
+            "columnName": "pLN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pYG",
+            "columnName": "pYG",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "qAR",
+            "columnName": "qAR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rON",
+            "columnName": "rON",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rSD",
+            "columnName": "rSD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rUB",
+            "columnName": "rUB",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rWF",
+            "columnName": "rWF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sAR",
+            "columnName": "sAR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sBD",
+            "columnName": "sBD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sCR",
+            "columnName": "sCR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sDG",
+            "columnName": "sDG",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sEK",
+            "columnName": "sEK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sGD",
+            "columnName": "sGD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sHP",
+            "columnName": "sHP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sLL",
+            "columnName": "sLL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sOS",
+            "columnName": "sOS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sRD",
+            "columnName": "sRD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sTD",
+            "columnName": "sTD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sVC",
+            "columnName": "sVC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sYP",
+            "columnName": "sYP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sZL",
+            "columnName": "sZL",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tHB",
+            "columnName": "tHB",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tJS",
+            "columnName": "tJS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tMT",
+            "columnName": "tMT",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tND",
+            "columnName": "tND",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tOP",
+            "columnName": "tOP",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tRY",
+            "columnName": "tRY",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tTD",
+            "columnName": "tTD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tWD",
+            "columnName": "tWD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tZS",
+            "columnName": "tZS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uAH",
+            "columnName": "uAH",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uGX",
+            "columnName": "uGX",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uSD",
+            "columnName": "uSD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uYU",
+            "columnName": "uYU",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uZS",
+            "columnName": "uZS",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vEF",
+            "columnName": "vEF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vND",
+            "columnName": "vND",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vUV",
+            "columnName": "vUV",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wST",
+            "columnName": "wST",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xAF",
+            "columnName": "xAF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xAG",
+            "columnName": "xAG",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xAU",
+            "columnName": "xAU",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xCD",
+            "columnName": "xCD",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xDR",
+            "columnName": "xDR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xOF",
+            "columnName": "xOF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xPF",
+            "columnName": "xPF",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "yER",
+            "columnName": "yER",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zAR",
+            "columnName": "zAR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zMK",
+            "columnName": "zMK",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zMW",
+            "columnName": "zMW",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zWL",
+            "columnName": "zWL",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uSD"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ResponseModel",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`success` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `base` TEXT, `date` TEXT, `rates` TEXT, PRIMARY KEY(`timestamp`))",
+        "fields": [
+          {
+            "fieldPath": "success",
+            "columnName": "success",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "base",
+            "columnName": "base",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rates",
+            "columnName": "rates",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "timestamp"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"4d12a70144aceed8700d11ded604b7d5\")"
+    ]
+  }
+}
