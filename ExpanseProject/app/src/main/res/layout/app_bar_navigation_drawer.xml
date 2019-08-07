@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
+        android:background="@color/colorWhite"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -48,7 +48,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/activity_main" />
+    <include layout="@layout/currency_converter" />
 
 <!--
     <com.google.android.material.floatingactionbutton.FloatingActionButton

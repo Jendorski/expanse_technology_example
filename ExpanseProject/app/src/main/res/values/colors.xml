@@ -5,7 +5,7 @@
 
     <color name="colorPrimaryDark">#00574B</color>
 
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">@color/expanse_green</color>
 
     <color name="disabled_text_color">#fdff</color>
 
@@ -14,5 +14,13 @@
     <color name="focused_text_color">#dda</color>
 
     <color name="pressed_text_color">#fe3</color>
+
+    <color name="colorBlack">#000000</color>
+
+    <color name="expanse_blue">#185DFA</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="expanse_green">#01b252</color>
 
 </resources>
