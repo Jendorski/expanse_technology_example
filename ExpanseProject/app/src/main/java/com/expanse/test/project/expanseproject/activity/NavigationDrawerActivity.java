@@ -2,11 +2,20 @@ package com.expanse.test.project.expanseproject.activity;
 
 import android.os.Bundle;
 
+import com.expanse.test.project.expanseproject.BuildConfig;
 import com.expanse.test.project.expanseproject.R;
 import com.expanse.test.project.expanseproject.adapters.SpinnerAdapter;
+import com.expanse.test.project.expanseproject.database.RatesDatabase;
+import com.expanse.test.project.expanseproject.models.ResponseModel;
+import com.expanse.test.project.expanseproject.retrofit.ApiClient;
+import com.expanse.test.project.expanseproject.retrofit.ApiInterface;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -32,6 +41,10 @@ import org.greenrobot.eventbus.EventBus;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * <p>This i expect will be the main activity</p>
@@ -45,7 +58,7 @@ import butterknife.OnClick;
  * <p>The following symbols will be displayed for conversion, EUR, USD, BTC, NGN, AUD, CAD, PLN, CNY, GHS, HKD</p>
  */
 public class NavigationDrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, TextWatcher {
 
     /*        "AED": "United Arab Emirates Dirham",
         "AFN": "Afghan Afghani",
@@ -223,29 +236,34 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     int[] currencyImage = {};
 
+    private static final String TAG = NavigationDrawerActivity.class.getSimpleName();
+
     @BindView(R.id.currency_converter_button)
-    private Button convertButton;
+    Button convertButton;
 
     @BindView(R.id.old_currency_edit_text)
-    private EditText oldEditText;
+    EditText oldEditText;
 
     @BindView(R.id.new_currency_edit_text)
-    private EditText newEditText;
+    EditText newEditText;
 
     @BindView(R.id.new_country_text_view)
-    private TextView newCountryText;
+    TextView newCountryText;
 
     @BindView(R.id.old_country_text_view)
-    private TextView oldCountryText;
+    TextView oldCountryText;
 
     @BindView(R.id.mid_market_text_time)
-    private TextView timeFrameText;
+    TextView timeFrameText;
 
     @BindView(R.id.spinner_new_currency)
-    private Spinner newSpinner;
+    Spinner newSpinner;
 
     @BindView(R.id.spinner_old_currency)
-    private Spinner oldSpinner;
+    Spinner oldSpinner;
+
+    @BindView(R.id.currency_converter_spin_kit)
+    SpinKitView spinKitView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -277,9 +295,13 @@ public class NavigationDrawerActivity extends AppCompatActivity
         oldSpinner.setAdapter(new SpinnerAdapter(NavigationDrawerActivity.this, R.layout.currency_list_row,
                 R.id.country_name, currencyList,currencyImage));
 
+        newSpinner.setAdapter(new SpinnerAdapter(NavigationDrawerActivity.this, R.layout.currency_list_row,
+                R.id.country_name, currencyList,currencyImage));
+
         //EventBus.getDefault().register(this);
         //@OnClick(R.id.currency_converter_button)
 
+        convert();
     }
 
     @Override
@@ -349,4 +371,56 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     }
 
+    /**
+     * <p>This method calls the latest rates for all available currencies offered by <url>fixer.io</url></p>
+     */
+
+    private void convert(){
+
+        spinKitView.setVisibility(View.VISIBLE);
+        spinKitView.animate();
+
+        Retrofit retrofit = ApiClient.getClient();
+
+        ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+
+        retrofit2.Call<ResponseModel> call = apiInterface.getLatestRates(BuildConfig.API_KEY);
+
+        call.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+
+                spinKitView.setVisibility(View.INVISIBLE);
+
+                ResponseModel responseModel = response.body();
+
+                Log.i(TAG, "RESPONSE MODEL: " + responseModel.getBase());
+
+                RatesDatabase.with(NavigationDrawerActivity.this).ratesDao().insertRates(responseModel.getRates());
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                call.cancel();
+                t.printStackTrace();
+                spinKitView.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
 }

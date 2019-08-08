@@ -1,15 +1,10 @@
 package com.expanse.test.project.expanseproject.retrofit;
 
 
-import com.expanse.test.project.expanseproject.BuildConfig;
 import com.expanse.test.project.expanseproject.models.ResponseModel;
 
 import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
@@ -18,7 +13,7 @@ public interface ApiInterface {
      * <p>Get Historical rates</p>
      */
     @GET("")
-    Call<?> getHistoricRates();
+    Call<ResponseModel> getHistoricRates(@Query("access_key") String accessKey);
 
     /**<p>This gets the latest currency symbols, referencing the Euros currency as a starting point</p>
      *
@@ -36,7 +31,7 @@ public interface ApiInterface {
      *
      */
     @GET("")
-    Call<?> convertToNewCurrency(@Query("") String oldCurrency,
+    Call<ResponseModel> convertToNewCurrency(@Query("") String oldCurrency,
                                  @Query("") String newCurrency,
                                  @Query("access_key") String accessKey);
 

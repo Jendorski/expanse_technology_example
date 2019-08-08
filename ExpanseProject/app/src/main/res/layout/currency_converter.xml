@@ -157,4 +157,14 @@
         android:layout_alignBottom="@+id/mid_market_text_time"
         android:layout_toEndOf="@+id/mid_market_text_time"/>
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/currency_converter_spin_kit"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorAccent" />
+
 </RelativeLayout>
