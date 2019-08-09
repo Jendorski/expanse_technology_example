@@ -1,14 +1,14 @@
 # expanse_technology_example
 
-## Development setup
+### Development setup
 
 First off, you require the latest Android Studio 3.0 (or newer) to be able to build the app.
 
-##Build Tools version:
+### Build Tools version:
  
  The Build Tools Version is "29.0.1"
 
-##Clone with HTTPS
+### Clone with HTTPS
 
 Clone with [Git](https://github.com/Jendorski/expanse_technology_example.git), allow the Android Studio to build
 
@@ -18,7 +18,9 @@ You need to supply API keys for the various services the
 app uses. That is currently [Fixer.io](https://fixer.io/documentation). You can find information about
 how to gain access via the relevant links.
 
-##Libraries 
+
+### Libraries 
+
 
 The following libraries are in use:
 
