@@ -18,4 +18,7 @@
     <string name="currency_converter">Currency Converter</string>
     <string name="enter_number">Enter number</string>
     <string name="convert">Convert</string>
+    <string name="an_error_occured">An error occurred</string>
+    <string name="conversion_problem">Unable to convert, no rates</string>
+    <string name="period">.</string>
 </resources>

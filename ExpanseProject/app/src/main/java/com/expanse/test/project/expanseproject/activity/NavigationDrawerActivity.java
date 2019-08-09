@@ -1,46 +1,38 @@
 package com.expanse.test.project.expanseproject.activity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.expanse.test.project.expanseproject.BuildConfig;
 import com.expanse.test.project.expanseproject.R;
 import com.expanse.test.project.expanseproject.adapters.SpinnerAdapter;
 import com.expanse.test.project.expanseproject.database.RatesDatabase;
+import com.expanse.test.project.expanseproject.methods.MethodClass;
 import com.expanse.test.project.expanseproject.models.ResponseModel;
 import com.expanse.test.project.expanseproject.retrofit.ApiClient;
 import com.expanse.test.project.expanseproject.retrofit.ApiInterface;
 import com.github.ybq.android.spinkit.SpinKitView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
-
-import androidx.core.view.GravityCompat;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-
-import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.Menu;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
-
-import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnItemSelected;
+import butterknife.OnTextChanged;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -56,187 +48,23 @@ import retrofit2.Retrofit;
  * <p>The Sign Up Text also has no functionality, also to imitate the mock screen</p>
  *
  * <p>The following symbols will be displayed for conversion, EUR, USD, BTC, NGN, AUD, CAD, PLN, CNY, GHS, HKD</p>
+ *
+ * <p>The base currency is set to Euros, given that the information from the API (a free plan) does not allow to retrieve rates for other currencies</p>
+ *
+ * <p>The conversion is carried out when as the text is changing or the spinner for the new currency is selected or the convert button is clicked</p>
  */
 public class NavigationDrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, TextWatcher {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-    /*        "AED": "United Arab Emirates Dirham",
-        "AFN": "Afghan Afghani",
-        "ALL": "Albanian Lek",
-        "AMD": "Armenian Dram",
-        "ANG": "Netherlands Antillean Guilder",
-        "AOA": "Angolan Kwanza",
-        "ARS": "Argentine Peso",
-        "AUD": "Australian Dollar",
-        "AWG": "Aruban Florin",
-        "AZN": "Azerbaijani Manat",
-        "BAM": "Bosnia-Herzegovina Convertible Mark",
-        "BBD": "Barbadian Dollar",
-        "BDT": "Bangladeshi Taka",
-        "BGN": "Bulgarian Lev",
-        "BHD": "Bahraini Dinar",
-        "BIF": "Burundian Franc",
-        "BMD": "Bermudan Dollar",
-        "BND": "Brunei Dollar",
-        "BOB": "Bolivian Boliviano",
-        "BRL": "Brazilian Real",
-        "BSD": "Bahamian Dollar",
-        "BTC": "Bitcoin",
-        "BTN": "Bhutanese Ngultrum",
-        "BWP": "Botswanan Pula",
-        "BYN": "New Belarusian Ruble",
-        "BYR": "Belarusian Ruble",
-        "BZD": "Belize Dollar",
-        "CAD": "Canadian Dollar",
-        "CDF": "Congolese Franc",
-        "CHF": "Swiss Franc",
-        "CLF": "Chilean Unit of Account (UF)",
-        "CLP": "Chilean Peso",
-        "CNY": "Chinese Yuan",
-        "COP": "Colombian Peso",
-        "CRC": "Costa Rican Colón",
-        "CUC": "Cuban Convertible Peso",
-        "CUP": "Cuban Peso",
-        "CVE": "Cape Verdean Escudo",
-        "CZK": "Czech Republic Koruna",
-        "DJF": "Djiboutian Franc",
-        "DKK": "Danish Krone",
-        "DOP": "Dominican Peso",
-        "DZD": "Algerian Dinar",
-        "EGP": "Egyptian Pound",
-        "ERN": "Eritrean Nakfa",
-        "ETB": "Ethiopian Birr",
-        "EUR": "Euro",
-        "FJD": "Fijian Dollar",
-        "FKP": "Falkland Islands Pound",
-        "GBP": "British Pound Sterling",
-        "GEL": "Georgian Lari",
-        "GGP": "Guernsey Pound",
-        "GHS": "Ghanaian Cedi",
-        "GIP": "Gibraltar Pound",
-        "GMD": "Gambian Dalasi",
-        "GNF": "Guinean Franc",
-        "GTQ": "Guatemalan Quetzal",
-        "GYD": "Guyanaese Dollar",
-        "HKD": "Hong Kong Dollar",
-        "HNL": "Honduran Lempira",
-        "HRK": "Croatian Kuna",
-        "HTG": "Haitian Gourde",
-        "HUF": "Hungarian Forint",
-        "IDR": "Indonesian Rupiah",
-        "ILS": "Israeli New Sheqel",
-        "IMP": "Manx pound",
-        "INR": "Indian Rupee",
-        "IQD": "Iraqi Dinar",
-        "IRR": "Iranian Rial",
-        "ISK": "Icelandic Króna",
-        "JEP": "Jersey Pound",
-        "JMD": "Jamaican Dollar",
-        "JOD": "Jordanian Dinar",
-        "JPY": "Japanese Yen",
-        "KES": "Kenyan Shilling",
-        "KGS": "Kyrgystani Som",
-        "KHR": "Cambodian Riel",
-        "KMF": "Comorian Franc",
-        "KPW": "North Korean Won",
-        "KRW": "South Korean Won",
-        "KWD": "Kuwaiti Dinar",
-        "KYD": "Cayman Islands Dollar",
-        "KZT": "Kazakhstani Tenge",
-        "LAK": "Laotian Kip",
-        "LBP": "Lebanese Pound",
-        "LKR": "Sri Lankan Rupee",
-        "LRD": "Liberian Dollar",
-        "LSL": "Lesotho Loti",
-        "LTL": "Lithuanian Litas",
-        "LVL": "Latvian Lats",
-        "LYD": "Libyan Dinar",
-        "MAD": "Moroccan Dirham",
-        "MDL": "Moldovan Leu",
-        "MGA": "Malagasy Ariary",
-        "MKD": "Macedonian Denar",
-        "MMK": "Myanma Kyat",
-        "MNT": "Mongolian Tugrik",
-        "MOP": "Macanese Pataca",
-        "MRO": "Mauritanian Ouguiya",
-        "MUR": "Mauritian Rupee",
-        "MVR": "Maldivian Rufiyaa",
-        "MWK": "Malawian Kwacha",
-        "MXN": "Mexican Peso",
-        "MYR": "Malaysian Ringgit",
-        "MZN": "Mozambican Metical",
-        "NAD": "Namibian Dollar",
-        "NGN": "Nigerian Naira",
-        "NIO": "Nicaraguan Córdoba",
-        "NOK": "Norwegian Krone",
-        "NPR": "Nepalese Rupee",
-        "NZD": "New Zealand Dollar",
-        "OMR": "Omani Rial",
-        "PAB": "Panamanian Balboa",
-        "PEN": "Peruvian Nuevo Sol",
-        "PGK": "Papua New Guinean Kina",
-        "PHP": "Philippine Peso",
-        "PKR": "Pakistani Rupee",
-        "PLN": "Polish Zloty",
-        "PYG": "Paraguayan Guarani",
-        "QAR": "Qatari Rial",
-        "RON": "Romanian Leu",
-        "RSD": "Serbian Dinar",
-        "RUB": "Russian Ruble",
-        "RWF": "Rwandan Franc",
-        "SAR": "Saudi Riyal",
-        "SBD": "Solomon Islands Dollar",
-        "SCR": "Seychellois Rupee",
-        "SDG": "Sudanese Pound",
-        "SEK": "Swedish Krona",
-        "SGD": "Singapore Dollar",
-        "SHP": "Saint Helena Pound",
-        "SLL": "Sierra Leonean Leone",
-        "SOS": "Somali Shilling",
-        "SRD": "Surinamese Dollar",
-        "STD": "São Tomé and Príncipe Dobra",
-        "SVC": "Salvadoran Colón",
-        "SYP": "Syrian Pound",
-        "SZL": "Swazi Lilangeni",
-        "THB": "Thai Baht",
-        "TJS": "Tajikistani Somoni",
-        "TMT": "Turkmenistani Manat",
-        "TND": "Tunisian Dinar",
-        "TOP": "Tongan Paʻanga",
-        "TRY": "Turkish Lira",
-        "TTD": "Trinidad and Tobago Dollar",
-        "TWD": "New Taiwan Dollar",
-        "TZS": "Tanzanian Shilling",
-        "UAH": "Ukrainian Hryvnia",
-        "UGX": "Ugandan Shilling",
-        "USD": "United States Dollar",
-        "UYU": "Uruguayan Peso",
-        "UZS": "Uzbekistan Som",
-        "VEF": "Venezuelan Bolívar Fuerte",
-        "VND": "Vietnamese Dong",
-        "VUV": "Vanuatu Vatu",
-        "WST": "Samoan Tala",
-        "XAF": "CFA Franc BEAC",
-        "XAG": "Silver (troy ounce)",
-        "XAU": "Gold (troy ounce)",
-        "XCD": "East Caribbean Dollar",
-        "XDR": "Special Drawing Rights",
-        "XOF": "CFA Franc BCEAO",
-        "XPF": "CFP Franc",
-        "YER": "Yemeni Rial",
-        "ZAR": "South African Rand",
-        "ZMK": "Zambian Kwacha (pre-2013)",
-        "ZMW": "Zambian Kwacha",
-        "ZWL": "Zimbabwean Dollar"
-*/
-
-    String[] currencyList = {"Euro", "United States Dollar", "Bitcoin", "Nigerian Naira",
+    String[] currencyList = {"Euro", "United States Dollar", "British Pound Sterling", "Nigerian Naira",
             "Australian Dollar", "Canadian Dollar", "Polish Zloty", "Chinese Yuan",
-            "Ghanaian Cedi", "Hong Kong Dollar"};
+            "Ghanaian Cedi", "Colombian Peso"};
 
     int[] currencyImage = {};
 
     private static final String TAG = NavigationDrawerActivity.class.getSimpleName();
+
+    private MethodClass methodClass;
 
     @BindView(R.id.currency_converter_button)
     Button convertButton;
@@ -265,6 +93,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
     @BindView(R.id.currency_converter_spin_kit)
     SpinKitView spinKitView;
 
+    @BindView(R.id.currency_converter_layout)
+    RelativeLayout mainLayout;
+
+    String oldCurrency, newCurrency, theTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -273,7 +106,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.outlined_menu);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
@@ -283,23 +115,22 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         toggle.setDrawerSlideAnimationEnabled(true);
 
-
         drawer.addDrawerListener(toggle);
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
         toggle.syncState();
-
         navigationView.setNavigationItemSelectedListener(this);
 
         ButterKnife.bind(this);
 
         oldSpinner.setAdapter(new SpinnerAdapter(NavigationDrawerActivity.this, R.layout.currency_list_row,
                 R.id.country_name, currencyList,currencyImage));
+        oldSpinner.setEnabled(false);
 
         newSpinner.setAdapter(new SpinnerAdapter(NavigationDrawerActivity.this, R.layout.currency_list_row,
                 R.id.country_name, currencyList,currencyImage));
 
-        //EventBus.getDefault().register(this);
-        //@OnClick(R.id.currency_converter_button)
+        methodClass = new MethodClass();
 
         convert();
     }
@@ -364,19 +195,37 @@ public class NavigationDrawerActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-       // EventBus.getDefault().unregister(this);
     }
 
-    private void toConverterFragment(){
+    private void toConverter(){
+        try{
+            oldCurrency = oldSpinner.getSelectedItem().toString();
+            newCurrency = newSpinner.getSelectedItem().toString();
 
+            String oldSymbol = methodClass.getSymbol(oldCurrency);
+            String newSymbol = methodClass.getSymbol(newCurrency);
+
+            String textToConvert = oldEditText.getText().toString();
+
+            String converted = methodClass.convertCurrency(textToConvert, oldCurrency, newCurrency, NavigationDrawerActivity.this);
+
+            newCountryText.setText(newSymbol);
+            oldCountryText.setText(oldSymbol);
+
+            newEditText.setText(converted, TextView.BufferType.EDITABLE);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, getResources().getString(R.string.an_error_occured), Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
      * <p>This method calls the latest rates for all available currencies offered by <url>fixer.io</url></p>
      */
-
     private void convert(){
 
+        mainLayout.setVisibility(View.INVISIBLE);
         spinKitView.setVisibility(View.VISIBLE);
         spinKitView.animate();
 
@@ -390,11 +239,14 @@ public class NavigationDrawerActivity extends AppCompatActivity
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
 
+                mainLayout.setVisibility(View.VISIBLE);
                 spinKitView.setVisibility(View.INVISIBLE);
 
                 ResponseModel responseModel = response.body();
 
-                Log.i(TAG, "RESPONSE MODEL: " + responseModel.getBase());
+                long timeStamp = responseModel.getTimestamp();
+                theTime = methodClass.convertToDate(timeStamp);
+                timeFrameText.setText(String.format("Market rates as at: %s", theTime));
 
                 RatesDatabase.with(NavigationDrawerActivity.this).ratesDao().insertRates(responseModel.getRates());
 
@@ -405,22 +257,45 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 call.cancel();
                 t.printStackTrace();
                 spinKitView.setVisibility(View.INVISIBLE);
+                mainLayout.setVisibility(View.VISIBLE);
             }
         });
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+    /**
+     * <p>As the button is being clicked upon, the converter is executed</p>
+     */
+    @OnClick(R.id.currency_converter_button)
+    void submitButton(View view){
+        if(methodClass.getRates(NavigationDrawerActivity.this) != null){
+            toConverter();
+        }else {
+            convert();
+        }
     }
 
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+    /**
+     * <p>Here we will call the conversion to take place, as the text or figure, in this case, is changing</p>
+     */
+    @OnTextChanged(R.id.old_currency_edit_text)
+    protected void onTextChanged(CharSequence text) {
+        if(methodClass.getRates(NavigationDrawerActivity.this) != null){
+            toConverter();
+        }else{
+            convert();
+        }
     }
 
-    @Override
-    public void afterTextChanged(Editable s) {
-
+    /**
+     * <p>Here we will call the conversion to take place, as the spinner is changing</p>
+     */
+    @OnItemSelected(R.id.spinner_new_currency)
+    protected void itemSelected(){
+        if(methodClass.getRates(NavigationDrawerActivity.this) != null){
+            toConverter();
+        }else {
+            convert();
+        }
     }
+
 }

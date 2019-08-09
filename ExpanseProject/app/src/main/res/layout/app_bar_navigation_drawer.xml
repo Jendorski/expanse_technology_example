@@ -9,6 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/DrawerArrowStyle"
         android:background="@color/colorWhite"
         app:elevation="0dp">
 
@@ -16,6 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            style="@style/DrawerArrowStyle"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <RelativeLayout
@@ -39,7 +41,8 @@
                     android:layout_marginEnd="13dp"
                     android:layout_marginRight="13dp"
                     android:text="Sign Up"
-                    android:textColor="#11223e"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                    android:textColor="@color/expanse_green"
                     android:textSize="18sp" />
 
             </RelativeLayout>

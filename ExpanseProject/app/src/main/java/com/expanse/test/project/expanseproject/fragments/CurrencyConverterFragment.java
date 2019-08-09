@@ -13,17 +13,6 @@ import com.expanse.test.project.expanseproject.R;
 
 public class CurrencyConverterFragment extends Fragment {
 
-    // declare three arrays for content of spinner
-    String[] strings = {"Inter Milan","AC Milan",
-            "Manchester City", "Barcelona", "Valencia","Juventus", "Italia","Italia",
-            "England", "Spain", "Spain","Italia"};
-
-/*
-    int arr_images[] = { R.drawable.pic1,
-            R.drawable.pic2, R.drawable.pic3,
-            R.drawable.pic4, R.drawable.pic5, R.drawable.pic6};
-*/
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

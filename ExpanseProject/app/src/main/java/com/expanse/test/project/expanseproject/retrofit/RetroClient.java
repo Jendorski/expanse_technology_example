@@ -1,7 +1,5 @@
 package com.expanse.test.project.expanseproject.retrofit;
 
-import com.expanse.test.project.expanseproject.BuildConfig;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -15,10 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetroClient {
 
     /********
-     * URLS
+     * URL
      *******/
-    private static final String ROOT_URL = "http://pratikbutani.x10.mx";
-
     private static final String GIGM_ROOT_URL = "http://client.gigmobilitysystem.com";
 
     static OkHttpClient okHttpClient;
@@ -34,12 +30,15 @@ public class RetroClient {
                 .build();
     }
 
+    /**
+     * <p>Initialise OkHttp, timeout is 5 seconds</p>
+     */
     private static OkHttpClient initOkHttp(){
 
         OkHttpClient.Builder httpClient  = new OkHttpClient.Builder()
-                .connectTimeout(60, TimeUnit.SECONDS)
-                .readTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.SECONDS);
+                .connectTimeout(5, TimeUnit.SECONDS)
+                .readTimeout(5, TimeUnit.SECONDS)
+                .writeTimeout(5, TimeUnit.SECONDS);
 
         httpClient.addInterceptor(new Interceptor() {
             @Override

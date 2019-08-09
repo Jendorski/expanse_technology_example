@@ -12,7 +12,10 @@ import com.expanse.test.project.expanseproject.models.RatesModel;
 public interface RatesDao {
 
     @Query("SELECT * FROM RatesModel")
-    RatesModel getLatestRates();
+    RatesModel getAllRates();
+
+    @Query("SELECT * FROM RatesModel")
+    RatesModel getRates();
 
     @Query("SELECT * FROM RatesModel WHERE 'timestamp' > :timestamp ")
     RatesModel getRatesByTimeStamp(long timestamp);

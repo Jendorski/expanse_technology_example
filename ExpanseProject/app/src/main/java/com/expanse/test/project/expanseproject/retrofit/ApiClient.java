@@ -7,14 +7,13 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private static int REQUEST_TIMEOUT = 20;
+    private static int REQUEST_TIMEOUT = 5;
 
     private static final String BASE_URL = "http://data.fixer.io/api/";
 
@@ -63,6 +62,8 @@ public class ApiClient {
      * <p>An Interceptor is attached to the Client, to see the body in the Logcat</p>
      *
      * <p>Request is built and initialisation occurs</p>
+     *
+     * <p>Interceptors are not added, we want to keep the info a bit private</p>
      */
     private static void initOkHttp(){
 
@@ -70,12 +71,6 @@ public class ApiClient {
                 .connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(REQUEST_TIMEOUT,TimeUnit.SECONDS)
                 .writeTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS);
-
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-
-        interceptor.level(HttpLoggingInterceptor.Level.BODY);
-
-        httpClient.addInterceptor(interceptor);
 
         httpClient.addInterceptor(new Interceptor() {
             @Override
