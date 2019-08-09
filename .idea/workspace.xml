@@ -9,11 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9048b1d0-cecc-4054-a1fb-7882e93ba472" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-    </list>
+    <list default="true" id="9048b1d0-cecc-4054-a1fb-7882e93ba472" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,15 +387,15 @@
     <property name="android.sdk.path" value="C:/android_sdk" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="device.picker.selection" value="Galaxy_Nexus_API_27" />
+    <property name="device.picker.selection" value="030091183J009022" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java/com/expanse/test/project/expanseproject" />
     <property name="last_opened_file_path" value="D:/Mine/MVVMExample-master" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.expanse.test.project.expanseproject.utils" />
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.expanse.test.project.expanseproject" />
@@ -417,8 +413,8 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\GIG\Documents\Github\expanse_technology_example\ExpanseProject\app\src\main\res\color" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.expanse.test.project.expanseproject.utils" />
     </key>
   </component>
   <component name="RunDashboard">

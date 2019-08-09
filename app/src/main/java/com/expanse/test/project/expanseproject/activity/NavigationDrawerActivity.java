@@ -267,11 +267,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
      */
     @OnClick(R.id.currency_converter_button)
     void submitButton(View view){
-        if(methodClass.getRates(NavigationDrawerActivity.this) != null){
-            toConverter();
-        }else {
-            convert();
-        }
+        toConverter();
     }
 
     /**
@@ -279,11 +275,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
      */
     @OnTextChanged(R.id.old_currency_edit_text)
     protected void onTextChanged(CharSequence text) {
-        if(methodClass.getRates(NavigationDrawerActivity.this) != null){
-            toConverter();
-        }else{
-            convert();
-        }
+        toConverter();
     }
 
     /**
@@ -291,11 +283,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
      */
     @OnItemSelected(R.id.spinner_new_currency)
     protected void itemSelected(){
-        if(methodClass.getRates(NavigationDrawerActivity.this) != null){
-            toConverter();
-        }else {
-            convert();
-        }
+        toConverter();
     }
 
 }
