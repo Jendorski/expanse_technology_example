@@ -3,9 +3,13 @@
 ## Development setup
 
 First off, you require the latest Android Studio 3.0 (or newer) to be able to build the app.
-Buildtoolsversion: "29.0.1"
+
+##Build Tools version:
+ 
+ The Build Tools Version is "29.0.1"
 
 ##Clone with HTTPS
+
 Clone with [Git](https://github.com/Jendorski/expanse_technology_example.git), allow the Android Studio to build
 
 ### API key
